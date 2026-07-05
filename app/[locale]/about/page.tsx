@@ -52,6 +52,16 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           ))}
         </div>
 
+        {/* Manifesto / Vision Section */}
+        <section className="p-8 md:p-12 rounded-lg bg-navy-900/30 border border-navy-800/50 backdrop-blur-md hover:border-cyan-400/30 transition-all duration-300 shadow-[0_4px_30px_rgba(0,0,0,0.2)] flex flex-col space-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white leading-tight font-display border-b border-navy-800/50 pb-4">
+            {t('manifesto.title')}
+          </h2>
+          <p className="text-sm md:text-base text-navy-200 leading-relaxed font-medium whitespace-pre-line">
+            {t('manifesto.content')}
+          </p>
+        </section>
+
       </main>
     </div>
   );

@@ -124,6 +124,10 @@
         "title": "SRE, Portal de Soluções e Fronteira de IA",
         "content": "Na comunidade de Empréstimos do Itaú Unibanco, construí o Portal CRQ (uma arquitetura estática no GitHub Pages com chatbot de IA, dashboards, runbooks e diagnósticos) que centralizou as soluções para atender toda nossa comunidade. Também desenvolvi o Hub de Soluções (com Java 21, Virtual Threads, Spring Boot e ECS Fargate) que reduziu a execução de geração de massas de teste de 5 minutos para 7 segundos. Além disso, liderei Discoveries com Devin.AI e Copilot Agent Mode (elevando a cobertura de testes para 90% dos repositórios da comunidade) e desenhei o fluxo automatizado do First Responder no Datadog Workflows integrado ao ServiceNow para triagem de incidentes em poucos minutos."
       }
+    },
+    "manifesto": {
+      "title": "A Visão: Engenharia de Software na Era da IA",
+      "content": "Com a ascensão da Inteligência Artificial Generativa, a velocidade de escrita de código aumentou exponencialmente. No entanto, a falta de consistência, testes e robustez tornou-se o maior gargalo das organizações modernas. Código gerado em alta velocidade sem os devidos pilares de qualidade resulta em débitos técnicos catastróficos.\n\nMinha visão é liderar o movimento de **AI-Driven Quality** e **Spec-Driven Development (SDD)**. Acredito que a Engenharia de Software moderna exige uma abordagem holística: conectar arquiteturas robustas baseadas em eventos (Event-Driven) e plataformas de desenvolvimento a ambientes de simulação isolados (Test Harness). Meu background multidisciplinar integrando Engenharia, SRE e Qualidade de Software é o diferencial crucial para antecipar riscos de produção, garantir segurança e sustentar decisões técnicas fundamentadas em dados reais de observabilidade."
     }
   },
   "ProjectDetails": {
