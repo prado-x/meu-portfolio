@@ -16,7 +16,7 @@ export default function LighthouseMedia() {
         muted
         playsInline
         preload="none"
-        className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity bg-navy-950"
+        className="absolute inset-0 w-full h-full object-cover opacity-75 mix-blend-luminosity bg-navy-950"
         aria-hidden="true"
       >
         <source src={`${basePath}/videos/lighthouse-storm.mp4`} type="video/mp4" />
@@ -26,7 +26,7 @@ export default function LighthouseMedia() {
         Opacity Masks & Gradients 
         Ensures strict contrast against text (Web Design Guidelines)
       */}
-      <div className="absolute inset-0 bg-navy-950/50" />
+      <div className="absolute inset-0 bg-navy-950/15" />
       <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/20 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-b from-navy-950 via-transparent to-transparent" />
     </div>
