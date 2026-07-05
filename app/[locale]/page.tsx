@@ -1,4 +1,5 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import About from "../../components/About";
 import Experience from "../../components/Experience";
 import Education from "../../components/Education";
 import CertificationsGrid from "../../components/CertificationsGrid";
@@ -39,6 +40,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       </main>
 
       {/* Injecting New Sections */}
+      <About />
       <Experience />
       <Education />
       <CertificationsGrid />

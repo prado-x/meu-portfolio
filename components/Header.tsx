@@ -18,7 +18,7 @@ export default async function Header({ locale }: { locale: string }) {
 
         {/* Center: Navigation Links */}
         <nav className="flex items-center space-x-3 sm:space-x-8">
-          <Link href={`/${locale}/about`} className="text-xs sm:text-sm font-medium text-navy-400 hover:text-navy-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950">
+          <Link href={`/${locale}#about`} className="text-xs sm:text-sm font-medium text-navy-400 hover:text-navy-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950">
             {t('about')}
           </Link>
           <Link href={`/${locale}#experience`} className="hidden sm:block text-xs sm:text-sm font-medium text-navy-400 hover:text-navy-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950">
