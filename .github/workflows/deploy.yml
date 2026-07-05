@@ -28,7 +28,7 @@ jobs:
       - name: Build and Export 🚀
         run: npm run build
         env:
-          NEXT_PUBLIC_REPO_NAME: ${{ not(endsWith(github.event.repository.name, '.github.io')) && github.event.repository.name || '' }}
+          NEXT_PUBLIC_REPO_NAME: ${{ !endsWith(github.event.repository.name, '.github.io') && github.event.repository.name || '' }}
 
       - name: Deploy 🚀
         uses: peaceiris/actions-gh-pages@v4
