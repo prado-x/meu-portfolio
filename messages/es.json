@@ -92,19 +92,19 @@
       "project1": {
         "title": "Plataforma de Generación de Datos",
         "description": "Diseño de un backend de alto rendimiento utilizando Java 21 Virtual Threads y Parallel Execution Services para orquestar payloads en 37 microservicios. Reducción de la latencia de 5 minutos a un promedio de 7 segundos.",
-        "tags": "Java 21 • Virtual Threads • PES • AWS ECS Fargate",
+        "tags": "Java 21 • Virtual Threads • Spring Boot • AWS ECS Fargate",
         "type": "private"
       },
       "project2": {
         "title": "Lighthouse y Primer Respondedor",
-        "description": "Un centro centralizado de Observabilidad y SRE que integra dashboards de Datadog y AWS QuickSight en una interfaz de usuario receptiva. Automatización de incidentes implementada con Datadog Workflows.",
-        "tags": "Datadog Workflows • Observability • ServiceNow • GenAI",
+        "description": "Plataforma corporativa de Observabilidad y SRE integrada con Datadog y ServiceNow. Automatiza la clasificación y el diagnóstico de incidentes en minutos mediante chatbots de IA.",
+        "tags": "Datadog Workflows • SRE & Observabilidad • ServiceNow • StackSpot AI",
         "type": "private"
       },
       "project3": {
-        "title": "Generador de Datos de Prueba de Código Abierto",
-        "description": "Una utilidad CLI de código abierto para generar datos simulados masivos y compatibles para pruebas de rendimiento. Crea esquemas en varias bases de datos en segundos.",
-        "tags": "TypeScript • CLI • Node.js • Faker.js",
+        "title": "Reactive Banking Test Harness",
+        "description": "Framework de código abierto de productividad en CI que simula escenarios bancarios de alta concurrencia con virtualizaciones inteligentes (WireMock/Testcontainers), contratos Pact JVM y caos.",
+        "tags": "Java 21 • Testcontainers • WireMock • Pact JVM • Chaos Engineering",
         "type": "public"
       }
     }
@@ -133,18 +133,26 @@
   "ProjectDetails": {
     "data-platform": {
       "title": "Plataforma de Generación de Datos Masivos Empresariales | Desarrollado en Itaú Unibanco",
-      "stack": "Spring Boot 4.x, Java 25, JEP 491, AWS ECS Fargate, OpenTelemetry Context Propagation, Datadog Workflows",
+      "stack": "Spring Boot 3.x, Java 21, JEP 491, AWS ECS Fargate, OpenTelemetry Context Propagation, Datadog Workflows",
       "businessProblem": "Entornos de desarrollo acoplados y lentitud extrema (embotellamiento de 5 minutos) para orquestar y generar datos de prueba consistentes para pruebas de crédito antes de ejecutar pipelines de CI/CD.",
-      "technicalSolution": "Reemplazo de pools de hilos bloqueantes con hilos virtuales nativos de Java 25. Implementación de JEP 491 (reemplazo de monitores internos con ReentrantLock para eliminar por completo el bloqueo de hilos o pinning) para activar llamadas concurrentes asíncronas paralelas contra 37 APIs bancarias internas. Personalización de propagadores OpenTelemetry para mantener la trazabilidad de Trace ID a través de hilos virtuales en ECS Fargate.",
+      "technicalSolution": "Reemplazo de pools de hilos bloqueantes con hilos virtuales nativos de Java 21. Implementación de JEP 491 (reemplazo de monitores internos con ReentrantLock para eliminar por completo el bloqueo de hilos o pinning) para activar llamadas concurrentes asíncronas paralelas contra 37 APIs bancarias internas. Personalización de propagadores OpenTelemetry para mantener la trazabilidad de Trace ID a través de hilos virtuales en ECS Fargate.",
       "impactMetrics": "Reducción de la latencia de generación de datos de 5 minutos a un promedio quirúrgico de 7 segundos, maximizando el rendimiento de la CPU y reduciendo los costos de infraestructura.",
       "mermaidChart": "graph TD\n  A[Pipeline CI/CD] -->|Gatillo| B(Generador de Datos - ECS Fargate)\n  B -->|Hilos Virtuales| C[37 APIs Bancarias Internas]\n  C -->|OpenTelemetry| D[Datadog Workflows]\n  C --> E[Datos de Prueba de Crédito]"
+    },
+    "crq-portal": {
+      "title": "Portal de Soluciones CRQ y Automatización First Responder | Construido en Itaú Unibanco",
+      "stack": "Datadog Workflows, APIs de ServiceNow, AWS S3, dashboards de QuickSight, APIs de StackSpot AI, GitHub Pages",
+      "businessProblem": "Operaciones dispersas de SRE y falta de estandarización en la clasificación de incidentes de producción críticos en la comunidad de Crédito, generando latencia de horas para el diagnóstico y respuesta de guardia.",
+      "technicalSolution": "Desarrollo del Portal CRQ bajo una arquitectura estática corporativa con proxies seguros a AWS S3 y paneles analíticos de QuickSight. Integración de chatbots impulsados por la API de StackSpot para diagnósticos inteligentes de infraestructura y ejecución de runbooks. Arquitectura del flujo 'First Responder' con Datadog Workflows integrado con la API de ServiceNow, escaneando fallos de log y activando alertas en pocos minutos.",
+      "impactMetrics": "Redujo la latência media de diagnóstico y enrutamiento de incidentes en producción de horas a menos de 5 minutos, automatizando runbooks y aumentando la eficiencia operativa de SRE en un 40%.",
+      "mermaidChart": "graph TD\n  A[Incidente en Producción] -->|Trigger| B(Datadog Monitor)\n  B -->|Webhooks| C{Datadog Workflows}\n  C -->|Triage y Logs| D[ServiceNow Incident]\n  C -->|Fetch Mappings| E[AWS S3 Portal Admin]\n  C -->|Slack Alert| F[On-Call Squad Responder]"
     },
     "reactive-banking-harness": {
       "title": "Harnés de Pruebas de Banca Reactiva y Motor de Caos | Código Abierto",
       "repoLink": "https://github.com/prado-x/reactive-banking-harness",
-      "stack": "Spring Boot 4.x, Java 25, Testcontainers, Contenedores Docker de WireMock, Pact Framework (Contratos del Consumidor), GitHub Actions",
+      "stack": "Spring Boot 3.x, Java 21, Testcontainers, Contenedores Docker de WireMock, Pact Framework (Contratos del Consumidor), GitHub Actions",
       "description": "Framework de productividad de código abierto enfocado en simular escenarios bancarios altamente resilientes y concurrentes dentro del pipeline de CI.",
-      "technicalSolution": "Aislamiento completo del entorno de pruebas utilizando instancias de WireMock dentro de contenedores de Testcontainers en GitHub Actions, eliminando fluctuaciones de red. Implementación de pruebas de contrato usando Pact Framework (Pact-JVM) para proteger la compatibilidad de las firmas de API aguas abajo. Inyección de Chaos Engineering (latencia artificial y caídas de paquetes de red mediante WireMock) para validar si los hilos virtuales centrales del sistema se autorrecuperan bajo estrés extremo de infraestructura.",
+      "technicalSolution": "Aislamiento completo del entorno de pruebas utilizando instancias de WireMock dentro de contenedores de Testcontainers en GitHub Actions, eliminando fluctuaciones de red. Implementación de pruebas de contrato usando Pact Framework (Pact-JVM) para proteger la compatibilidad de las firmas de API aguas abajo. Injección de Chaos Engineering (latencia artificial y caídas de paquetes de red mediante WireMock) para validar si los hilos virtuales centrales del sistema se autorrecuperan bajo estrés extremo de infraestructura.",
       "mermaidChart": "graph TD\n  A[CI de GitHub Actions] --> B(Testcontainers)\n  B --> C[WireMock Docker]\n  B --> D[Pact Framework JVM]\n  C -->|Caos: Latencia/Caídas| E(Sistema Central - Hilos Virtuales)\n  D -->|Pruebas de Contrato| E\n  E -->|Autorrecuperación| F[Estado Resiliente]"
     }
   }

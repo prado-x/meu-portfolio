@@ -16,7 +16,7 @@ export default async function FeaturedProjects() {
     },
     { 
       key: "project2", 
-      slug: "lighthouse",
+      slug: "crq-portal",
       title: t('items.project2.title'),
       description: t('items.project2.description'),
       tags: t('items.project2.tags'),
@@ -24,7 +24,7 @@ export default async function FeaturedProjects() {
     },
     { 
       key: "project3", 
-      slug: "open-source-generator",
+      slug: "reactive-banking-harness",
       title: t('items.project3.title'),
       description: t('items.project3.description'),
       tags: t('items.project3.tags'),

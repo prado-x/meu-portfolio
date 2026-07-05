@@ -7,7 +7,7 @@ import { locales } from "../../../../i18n/config";
 import ClientMermaidDiagram from "../../../../components/ClientMermaidDiagram";
 
 export function generateStaticParams() {
-  const slugs = ["data-platform", "reactive-banking-harness"];
+  const slugs = ["data-platform", "crq-portal", "reactive-banking-harness"];
   return locales.flatMap((locale) =>
     slugs.map((slug) => ({
       locale,
@@ -24,7 +24,7 @@ export default async function ProjectPage({ params }: Props) {
   const { slug, locale } = await params;
   setRequestLocale(locale);
   
-  if (slug !== "data-platform" && slug !== "reactive-banking-harness") {
+  if (slug !== "data-platform" && slug !== "crq-portal" && slug !== "reactive-banking-harness") {
     notFound();
   }
 
@@ -34,7 +34,7 @@ export default async function ProjectPage({ params }: Props) {
   const stack = t("stack");
   const mermaidChart = t("mermaidChart");
   
-  const isDataPlatform = slug === "data-platform";
+  const isEnterpriseCase = slug === "data-platform" || slug === "crq-portal";
 
   return (
     <div className="min-h-screen bg-navy-950 text-navy-50 font-sans selection:bg-navy-800 selection:text-navy-100 pb-24">
@@ -70,7 +70,7 @@ export default async function ProjectPage({ params }: Props) {
       <main className="w-full max-w-5xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-12 gap-12">
         {/* Left Column - Text Content */}
         <div className="md:col-span-7 space-y-16">
-          {isDataPlatform ? (
+          {isEnterpriseCase ? (
             <>
               <section>
                 <h2 className="text-sm font-semibold tracking-widest text-navy-500 uppercase mb-4 text-balance">Business Problem</h2>
@@ -111,7 +111,7 @@ export default async function ProjectPage({ params }: Props) {
 
         {/* Right Column - Metrics (if any) */}
         <div className="md:col-span-5 space-y-12">
-          {isDataPlatform ? (
+          {isEnterpriseCase ? (
             <section className="bg-navy-900/50 p-8 rounded-2xl border border-navy-800/50 relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <h2 className="text-sm font-semibold tracking-widest text-navy-500 uppercase mb-4 relative z-10 text-balance">Impact Metrics</h2>

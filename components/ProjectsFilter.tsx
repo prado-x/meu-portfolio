@@ -26,17 +26,50 @@ type ProjectsFilterProps = {
 
 export default function ProjectsFilter({ locale, projects, filters, enterpriseBadge }: ProjectsFilterProps) {
   const [filter, setFilter] = useState<"all" | "private" | "public">("all");
+  const [techFilter, setTechFilter] = useState<string | null>(null);
 
-  const filteredProjects = projects.filter((p) => filter === "all" || p.type === filter);
+  const filteredProjects = projects.filter((p) => {
+    const matchesType = filter === "all" || p.type === filter;
+    if (!matchesType) return false;
+    if (!techFilter) return true;
+
+    const normalizedTags = p.tags.toLowerCase();
+    const normalizedTech = techFilter.toLowerCase();
+
+    if (normalizedTech === "sre & datadog") {
+      return (
+        normalizedTags.includes("sre") ||
+        normalizedTags.includes("datadog") ||
+        normalizedTags.includes("observabilidade") ||
+        normalizedTags.includes("observability")
+      );
+    }
+    if (normalizedTech === "testcontainers & wiremock") {
+      return normalizedTags.includes("testcontainers") || normalizedTags.includes("wiremock");
+    }
+    return normalizedTags.includes(normalizedTech);
+  });
+
+  const techPills = [
+    { label: locale === "pt" ? "Todas as Stacks" : locale === "es" ? "Todas las Stacks" : "All Stacks", value: null },
+    { label: "Java 21", value: "Java" },
+    { label: "AWS", value: "AWS" },
+    { label: locale === "pt" ? "SRE & Datadog" : locale === "es" ? "SRE y Datadog" : "SRE & Datadog", value: "sre & datadog" },
+    { label: "Testcontainers & WireMock", value: "testcontainers & wiremock" },
+    { label: "GenAI / StackSpot", value: "stackspot" },
+  ];
 
   return (
-    <div className="w-full flex flex-col items-start space-y-12">
-      {/* Filter Tabs */}
+    <div className="w-full flex flex-col items-start space-y-8">
+      {/* Row 1: Filter Tabs (Private / Public) */}
       <div className="flex flex-wrap items-center gap-2 sm:gap-4 border-b border-navy-800/50 pb-4 w-full">
         {(["all", "private", "public"] as const).map((tab) => (
           <button
             key={tab}
-            onClick={() => setFilter(tab)}
+            onClick={() => {
+              setFilter(tab);
+              setTechFilter(null);
+            }}
             className={`px-5 py-2.5 text-sm font-semibold rounded-full transition-all ${
               filter === tab
                 ? "bg-navy-100 text-navy-950 shadow-sm"
@@ -48,8 +81,31 @@ export default function ProjectsFilter({ locale, projects, filters, enterpriseBa
         ))}
       </div>
 
+      {/* Row 2: Tech Filter Pills */}
+      <div className="flex flex-wrap items-center gap-2 w-full pt-2">
+        <span className="text-xs font-mono uppercase tracking-wider text-navy-500 mr-2">
+          {locale === "pt" ? "Filtrar por Stack:" : locale === "es" ? "Filtrar por Stack:" : "Filter by Stack:"}
+        </span>
+        {techPills.map((pill) => {
+          const isActive = techFilter === pill.value;
+          return (
+            <button
+              key={pill.label}
+              onClick={() => setTechFilter(pill.value)}
+              className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all border ${
+                isActive
+                  ? "bg-cyan-400/10 text-cyan-400 border-cyan-400/30 shadow-[0_0_15px_rgba(102,252,241,0.1)]"
+                  : "bg-navy-950/20 text-navy-400 hover:text-navy-200 border-navy-800/40 hover:border-navy-700/50"
+              }`}
+            >
+              {pill.label}
+            </button>
+          );
+        })}
+      </div>
+
       {/* Projects Grid */}
-      <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 w-full mt-10 auto-rows-[minmax(280px,auto)]">
+      <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 w-full mt-6 auto-rows-[minmax(280px,auto)]">
         <AnimatePresence mode="popLayout">
           {filteredProjects.map((project, index) => (
             <motion.div
@@ -65,7 +121,7 @@ export default function ProjectsFilter({ locale, projects, filters, enterpriseBa
                 mass: 0.8
               }}
               key={project.key}
-              className={`h-full ${index === 0 && filter === 'all' ? 'md:col-span-2' : ''}`}
+              className={`h-full ${index === 0 && filter === 'all' && !techFilter ? 'md:col-span-2' : ''}`}
             >
               <div className="group relative bg-navy-900/40 backdrop-blur-sm border border-navy-800/60 rounded-3xl p-8 lg:p-10 hover:bg-navy-800/50 transition-colors hover:border-navy-600/80 h-full flex flex-col overflow-hidden">
                 <div className="flex flex-col h-full space-y-5 relative z-10">
