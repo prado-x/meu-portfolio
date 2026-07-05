@@ -8,7 +8,7 @@ import ClientMermaidDiagram from "../../../../components/ClientMermaidDiagram";
 import LighthouseMedia from "../../../../components/LighthouseMedia";
 
 export function generateStaticParams() {
-  const slugs = ["data-platform", "crq-portal", "reactive-banking-harness"];
+  const slugs = ["data-platform", "crq-portal", "first-responder", "reactive-banking-harness"];
   return locales.flatMap((locale) =>
     slugs.map((slug) => ({
       locale,
@@ -25,7 +25,7 @@ export default async function ProjectPage({ params }: Props) {
   const { slug, locale } = await params;
   setRequestLocale(locale);
   
-  if (slug !== "data-platform" && slug !== "crq-portal" && slug !== "reactive-banking-harness") {
+  if (slug !== "data-platform" && slug !== "crq-portal" && slug !== "first-responder" && slug !== "reactive-banking-harness") {
     notFound();
   }
 
@@ -35,7 +35,7 @@ export default async function ProjectPage({ params }: Props) {
   const stack = t("stack");
   const mermaidChart = t("mermaidChart");
   
-  const isEnterpriseCase = slug === "data-platform" || slug === "crq-portal";
+  const isEnterpriseCase = slug === "data-platform" || slug === "crq-portal" || slug === "first-responder";
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden text-navy-50 font-sans selection:bg-navy-800 selection:text-navy-100 pb-24">

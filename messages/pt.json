@@ -90,18 +90,24 @@
     "enterpriseBadge": "Case de Engenharia | Construído no Itaú Unibanco",
     "items": {
       "project1": {
-        "title": "The Data Generation Platform",
-        "description": "Arquitetura de backend de alta performance utilizando Java 21 Virtual Threads e Parallel Execution Services para orquestrar payloads em 37 microsserviços. Redução de latência de 5 minutos para uma média de 7 segundos.",
-        "tags": "Java 21 • Virtual Threads • Spring Boot • AWS ECS Fargate",
+        "title": "Portal CRQ - Simplifica AI",
+        "description": "Hub de Autonomia de Engenharia unificando Geração de Massa (Hexagonal/Java 21), SRE Runbooks, Chatbots IA e Diagnóstico Automático de Conformidade Arquitetural de repositórios via API do GitHub.",
+        "tags": "Java 21 • React • Hexagonal Architecture • AWS ECS Fargate • GitHub API • S3",
         "type": "private"
       },
       "project2": {
-        "title": "Lighthouse & First Responder",
-        "description": "Plataforma de Observabilidade e SRE corporativa integrada ao Datadog e ServiceNow. Automatiza a triagem e diagnóstico de incidentes críticos em poucos minutos com chatbots baseados em IA.",
-        "tags": "Datadog Workflows • SRE & Observabilidade • ServiceNow • StackSpot AI",
+        "title": "First Responder SRE",
+        "description": "Orquestração automatizada para triagem de incidentes críticos de produção. Conecta Datadog Workflows, ServiceNow e Slack para reduzir a latência de acionamento on-call de horas para minutos.",
+        "tags": "Datadog Workflows • ServiceNow • Slack API • SRE & Observabilidade",
         "type": "private"
       },
       "project3": {
+        "title": "iTomation Modernization",
+        "description": "Modernização e migração para cloud da plataforma local de massas de teste. Utiliza paralelismo virtual em Java 21 para orquestração de 22 cenários em APIs bancárias downstream.",
+        "tags": "Java 21 • Virtual Threads • Spring Boot • Angular 18 • ECS Fargate",
+        "type": "private"
+      },
+      "project4": {
         "title": "Reactive Banking Test Harness",
         "description": "Framework open-source de produtividade no CI simulando cenários bancários de alta concorrência com virtualizações inteligentes (WireMock/Testcontainers), testes de contrato (Pact JVM) e injeção de caos.",
         "tags": "Java 21 • Testcontainers • WireMock • Pact JVM • Chaos Engineering",
@@ -140,10 +146,18 @@
       "mermaidChart": "graph TD\n  subgraph Frontend [Camada de Apresentacao - Estatica]\n    UI[Portal Web - Angular 18]\n    CF[AWS CloudFront - CDN]\n    S3[AWS S3 - Hosting]\n    UI <--> CF\n    CF <--> S3\n  end\n  subgraph Gateway [Roteamento & Seguranca - AWS]\n    GW[AWS API Gateway - Custom Domain]\n    VPC[VPC Link & NLB]\n    CF -->|HTTPS / REST API| GW\n    GW -->|Tunnel Privado| VPC\n  end\n  subgraph Backend [Plataforma Java 21 - Core Engine]\n    Fargate[ECS Fargate Task - Spring Boot 3]\n    Sec[AWS Secrets Manager]\n    PES[Parallel Execution Service]\n    VT[Virtual Threads Executor]\n    VPC --> Fargate\n    Fargate -.->|Keys| Sec\n    Fargate -->|Orquestracao| PES\n    PES -->|Thread Forking| VT\n  end\n  subgraph Downstream [Canais Downstream & Consumo]\n    SyncAPI[API Cadastral - Chamada Sincrona]\n    Broker(PES / Virtual Threads)\n    APIs[12 a 32 APIs Bancarias]\n    Data[Massa de Dados Consolidada]\n    VT -->|1. Busca ID_Cliente| SyncAPI\n    SyncAPI -->|Retorna ID_Cliente| Broker\n    Broker -->|2. Paralelizacao Concorrente| APIs\n    APIs -->|Consolidacao de Massas| Data\n  end"
     },
     "crq-portal": {
-      "title": "Portal de Soluções CRQ & Automação First Responder | Construído no Itaú Unibanco",
-      "stack": "Datadog Workflows, APIs do ServiceNow, AWS S3, dashboards do QuickSight, APIs do StackSpot AI, GitHub Pages",
+      "title": "Portal CRQ - Simplifica AI: Hub de Autonomia de Engenharia | Construído no Itaú Unibanco",
+      "stack": "Java 21, Virtual Threads, Spring Boot 3.x, React, Tailwind CSS, Docusaurus, JUnit, Pitest, Testcontainers, LocalStack, Terraform, AWS ECS Fargate, AWS API Gateway, S3, GitHub Actions",
+      "businessProblem": "A comunidade de Empréstimos sofria com a dispersão de ferramentas operacionais, processos manuais de documentação e barreiras no acesso a dados de conformidade arquitetural e de incidentes. Havia a necessidade de unificar em uma única plataforma a geração de massas, playbooks, diagnósticos de arquitetura e documentações com facilidade de deploy e acesso de ponta a ponta.",
+      "technicalSolution": "Desenvolvimento de um Hub de Soluções com Arquitetura Hexagonal no backend (Java 21 com Spring Boot e Virtual Threads no ECS Fargate) e um portal React estático hospedado no GitHub Pages que realiza chamadas seguras por proxy via AWS API Gateway. O backend encapsula os domínios: 'massa' (gerador paralelizado), 'runbook' (persistência de dados de War Room no S3 em formato JSON via POST/GET/DELETE), 'agentchatbot' (IA integrada a LLMs com persona e base de conhecimento contextuais) e 'arquitetura' (serviço complexo que consome a API do GitHub, avalia repositórios com deploy recente nos últimos 6 meses contra as diretrizes da Arquitetura de Referência do banco, avaliando Codeowners, SDD e BMAD, e salva o scorecard no S3 para consumo do front). A UI do Lighthouse exibe dashboards do QuickSight embarcados e um painel interativo de 9 blocos para incidentes.",
+      "impactMetrics": "Arquitetura unificada e modularizada. Lançamento do Hub CLI para distribuição da arquitetura de referência. Diagnóstico arquitetural automatizado cobrindo 100% dos repositórios da comunidade com cruzamento histórico. Cobertura de testes de 95% (JUnit) e 90% (Pitest) em toda a lógica do Hub backend.",
+      "mermaidChart": "graph TD\n  subgraph UI [Frontend - React / Docusaurus]\n    Page[GitHub Pages]\n    MassaUI[Geracao de Massa]\n    LightUI[Lighthouse - Incidente / Runbooks]\n    ArchUI[Diagnostico de Arquitetura]\n    ChatUI[Agente Chatbot AI]\n  end\n  subgraph Gateway [API Gateway / Proxy]\n    GW[AWS API Gateway]\n  end\n  subgraph Core [Backend Hub - Arquitetura Hexagonal]\n    Hub[Java 21 / ECS Fargate]\n    Run[Domain: Runbook SRE]\n    Massa[Domain: Massa de Dados]\n    Arch[Domain: Validador de Arquitetura]\n    Agent[Domain: LLM Wrapper]\n  end\n  subgraph Storage [Infraestrutura & APIs Externas]\n    S3[AWS S3 Buckets]\n    GH[GitHub Rest API]\n    LLM[Provedor LLM - Contextual Persona]\n  end\n  Page --> MassaUI & LightUI & ArchUI & ChatUI\n  MassaUI & LightUI & ArchUI & ChatUI -->|REST Proxy Calls| GW\n  GW --> Hub\n  Hub --> Run & Massa & Arch & Agent\n  Run -->|Salva/Le JSON| S3\n  Arch -->|POST Trigger / GET JSON| S3\n  Arch -->|Varredura de Repositorios| GH\n  Agent -->|Query Baseada em KS| LLM"
+    },
+    "first-responder": {
+      "title": "First Responder SRE: Automação de Incidentes Críticos | Construído no Itaú Unibanco",
+      "stack": "Datadog Workflows, APIs do ServiceNow, AWS S3, dashboards do QuickSight, Slack APIs, GitHub Actions",
       "businessProblem": "Operações SRE dispersas e falta de padronização na triagem de incidentes de produção críticos da comunidade de Empréstimos, gerando latência de horas para diagnóstico e acionamento de incidentes.",
-      "technicalSolution": "Desenvolvimento do Portal CRQ em arquitetura estática corporativa com proxies seguros acoplados ao AWS S3 e painéis analíticos do QuickSight. Integração de chatbots alimentados pela API do StackSpot para diagnósticos inteligentes de infraestrutura e execução automática de runbooks. Arquitetura do fluxo 'First Responder' utilizando Datadog Workflows integrado ao ServiceNow, realizando a varredura automatizada de logs e acionando as squads responsáveis em poucos minutos.",
+      "technicalSolution": "Arquitetura do fluxo 'First Responder' utilizando Datadog Workflows integrado ao ServiceNow, realizando a varredura automatizada de logs e acionando as squads responsáveis em poucos minutos. A automação executa runbooks automáticos de diagnóstico e posta alertas no Slack contendo detalhes e links para resolução.",
       "impactMetrics": "Reduziu o tempo médio de triagem de incidentes críticos de produção de horas para menos de 5 minutos, automatizando runbooks de diagnóstico e aumentando a eficiência operacional das squads em 40%.",
       "mermaidChart": "graph TD\n  subgraph EventSource [Origem dos Eventos]\n    Prod[Incidente Critico - Producao]\n    DD(Datadog Monitors / Alertas APM)\n    Prod -->|Logs & Anomalias| DD\n  end\n  subgraph Automation [Orquestracao de Automacao]\n    DDWF(Datadog Workflows)\n    Bot(Chatbot IA - StackSpot API)\n    DD -->|Webhook Trigger| DDWF\n    DDWF <-->|Diagnostico Inteligente| Bot\n  end\n  subgraph SRE_Portal [Portal Admin CRQ & Mappings]\n    S3[AWS S3 - Mappings]\n    Page[GitHub Pages - CRQ Portal UI]\n    DDWF -->|Proxy Auth & Fetch Rules| S3\n    Page <-->|Consulta QuickSight Dashboards| S3\n  end\n  subgraph Incident_Management [Gestao de Incidentes & Alertas]\n    SNOW[ServiceNow API - Registro]\n    Slack[Alertas Slack On-Call Squads]\n    DDWF -->|1. Registro e Triagem Automatica| SNOW\n    DDWF -->|2. Notificacao e Link do Runbook| Slack\n  end"
     },

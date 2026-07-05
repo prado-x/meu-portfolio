@@ -8,7 +8,7 @@ export default async function FeaturedProjects() {
   const projectsData = [
     { 
       key: "project1", 
-      slug: "data-platform",
+      slug: "crq-portal",
       title: t('items.project1.title'),
       description: t('items.project1.description'),
       tags: t('items.project1.tags'),
@@ -16,7 +16,7 @@ export default async function FeaturedProjects() {
     },
     { 
       key: "project2", 
-      slug: "crq-portal",
+      slug: "first-responder",
       title: t('items.project2.title'),
       description: t('items.project2.description'),
       tags: t('items.project2.tags'),
@@ -24,10 +24,18 @@ export default async function FeaturedProjects() {
     },
     { 
       key: "project3", 
-      slug: "reactive-banking-harness",
+      slug: "data-platform",
       title: t('items.project3.title'),
       description: t('items.project3.description'),
       tags: t('items.project3.tags'),
+      type: "private" as const
+    },
+    { 
+      key: "project4", 
+      slug: "reactive-banking-harness",
+      title: t('items.project4.title'),
+      description: t('items.project4.description'),
+      tags: t('items.project4.tags'),
       type: "public" as const
     }
   ];
