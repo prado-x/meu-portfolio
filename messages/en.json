@@ -1,0 +1,147 @@
+{
+  "Nav": {
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects"
+  },
+  "Hero": {
+    "badge": "PRINCIPAL SDET & PLATFORM ARCHITECT",
+    "headline": "Orchestrating Productivity Engineering, Quality & Enterprise GenAI",
+    "bio": "Specialized in Concurrency, Platform Engineering, and Advanced Observability. I leverage Java 21 Virtual Threads, Datadog Workflows, and Agentic AI (MCP) to safeguard software quality and architect resilient systems that accelerate from minutes to seconds.",
+    "metrics": {
+      "coverageValue": "95%+",
+      "coverageLabel": "Code Coverage Scale",
+      "defectsValue": "7s",
+      "defectsLabel": "Async Orchestration (from 5m)",
+      "experienceValue": "10+",
+      "experienceLabel": "Years in Quality Architecture"
+    },
+    "buttons": {
+      "projects": "Inspect Real Cases",
+      "linkedin": "Connect on LinkedIn"
+    }
+  },
+  "Experience": {
+    "title": "Professional Experience",
+    "roles": {
+      "role1": {
+        "period": "2020 - Present",
+        "title": "Principal SDET & Platform Architect • Itaú Unibanco",
+        "description": "Architected high-performance platforms utilizing Java 21 Virtual Threads and Datadog Workflows. Engineered Service Virtualization layers and orchestrated enterprise GenAI (MCP) strategies for scale.",
+        "skills": "Platform Engineering • GenAI • Java 21 • AWS"
+      },
+      "role2": {
+        "period": "2017 - 2020",
+        "title": "Senior Automation Architect • Wipro",
+        "description": "Designed and deployed global automation frameworks for international banking clients. Led CI/CD integrations and established end-to-end quality gates.",
+        "skills": "Automation Architecture • CI/CD • DevOps"
+      },
+      "role3": {
+        "period": "2015 - 2017",
+        "title": "Software Development Engineer in Test • RSI / Keeggo",
+        "description": "Developed robust automated test suites for financial systems. Reduced manual regression testing times and implemented continuous testing practices.",
+        "skills": "Test Engineering • Financial Systems • Agile"
+      }
+    }
+  },
+  "Education": {
+    "title": "Academic Background",
+    "items": {
+      "postgrad": {
+        "period": "2026 - 2027",
+        "title": "Post-Graduation in Generative AI",
+        "institution": "Universidade Federal de Goiás (UFG)",
+        "description": "Specialized curriculum focusing on LLMs, Agentic AI, and Machine Learning Architecture."
+      },
+      "bachelor": {
+        "period": "Completed",
+        "title": "Bachelor of Information Systems",
+        "institution": "University Degree",
+        "description": "Core foundation in computer science, software engineering, and system architecture."
+      }
+    }
+  },
+  "Certifications": {
+    "title": "Credentials & Certifications",
+    "button": "Verify Credentials on Credly",
+    "link": "https://www.credly.com/users/vinicius-do-prado.1b53b92c/badges",
+    "groups": {
+      "genai": {
+        "title": "GenAI & Cutting-Edge",
+        "items": ["Anthropic MCP", "UFG GenAI", "IBM AI", "Quantum Computing"]
+      },
+      "aws": {
+        "title": "AWS Cloud Infrastructure",
+        "items": ["AWS EKS", "AWS Fargate", "AWS Cloud Quest"]
+      },
+      "datadog": {
+        "title": "Datadog & SRE Core",
+        "items": ["Datadog Workflows", "Observability Core", "SRE Fundamentals"]
+      }
+    }
+  },
+  "Projects": {
+    "title": "Featured Projects",
+    "filters": {
+      "all": "All",
+      "private": "Enterprise Architectures (Private)",
+      "public": "Open-Source Frameworks (Public)"
+    },
+    "enterpriseBadge": "Enterprise Case Study | Built at Itaú Unibanco",
+    "items": {
+      "project1": {
+        "title": "The Data Generation Platform",
+        "description": "Engineered a high-performance backend utilizing Java 21 Virtual Threads and Parallel Execution Services to orchestrate payloads across 37 microservices. Slashed latency from 5 minutes to an average of 7 seconds.",
+        "tags": "Java 21 • Virtual Threads • PES • AWS ECS Fargate",
+        "type": "private"
+      },
+      "project2": {
+        "title": "Lighthouse & First Responder",
+        "description": "A centralized Observability and SRE hub integrating complex Datadog Dashboards and AWS QuickSight within a responsive UI. Implemented incident automation with Datadog Workflows.",
+        "tags": "Datadog Workflows • Observability • ServiceNow • GenAI",
+        "type": "private"
+      },
+      "project3": {
+        "title": "Open-Source Test Data Generator",
+        "description": "An open-source CLI utility for generating massive and compliant dummy data for performance testing. Bootstraps schemas across various databases in seconds.",
+        "tags": "TypeScript • CLI • Node.js • Faker.js",
+        "type": "public"
+      }
+    }
+  },
+  "AboutPage": {
+    "title": "About Me",
+    "pillars": {
+      "blueprint": {
+        "title": "The Blueprint & The Foundation",
+        "content": "My journey into technology began long before my formal education. It started with a deep curiosity about how software could be optimized and tested to never fail. This passion led me to pursue a Bachelor’s in Information Systems, laying the engineering groundwork for a career dedicated to software resilience. Beyond the code, my greatest foundation is my family. I am happily married, share my home with our beloved dogs, and am currently preparing for my most important project yet: becoming a father. This personal drive for stability and growth reflects directly on how I approach my work—with extreme ownership, long-term vision, and absolute dedication."
+      },
+      "scale": {
+        "title": "Scale & The Core Banking Ecosystem",
+        "content": "Over the last decade, I have built and scaled enterprise-grade E2E test automation frameworks and productivity systems across the most complex financial and banking environments in Latin America. My career has been forged within top-tier institutions and elite consultorias, including Itaú, Bradesco, Santander, Banco Original, Rabobank, Cielo, Banco BV, Wipro, and RSI. Navigating these highly regulated ecosystems required deep polyglot engineering fluency. I mastered multi-layer automation architectures across Java, Python, Kotlin, and Swift, ensuring zero-downtime deployments, bulletproof API integrations, and scaling testing matrices for applications used by millions of users daily."
+      },
+      "frontier": {
+        "title": "The Architecture & GenAI Frontier",
+        "content": "Today, within the Lending community at Itaú Unibanco, I operate as an Engineering Productivity and Quality Specialist. I specialized in breaking critical infrastructure bottlenecks and optimizing concurrent distributed systems. A prime example was architecting a data-generation platform utilizing Java 21, Virtual Threads, and Parallel Execution Services on AWS ECS Fargate, which parallelized 37 banking APIs and plummeted data creation latency from 5 minutes to a 7-second average. My mission is to champion the shift-left and shift-right movements—whether by migrating 115 complex repositories to a modern pipeline in less than two weeks or building bank-wide incident automations using Datadog Workflows. Currently pursuing a Post-Graduation in Generative AI at UFG, I lead the enterprise discovery and integration of cutting-edge AI Agent workflows, embedding tools like Devin.AI, Model Context Protocol (MCP), and GitHub Copilot into the development lifecycle to multiply team velocity and guarantee peak software excellence."
+      }
+    }
+  },
+  "ProjectDetails": {
+    "data-platform": {
+      "title": "Enterprise Mass Data Generation Platform | Built at Itaú Unibanco",
+      "stack": "Spring Boot 4.x, Java 25, JEP 491, AWS ECS Fargate, OpenTelemetry Context Propagation, Datadog Workflows",
+      "businessProblem": "Coupled staging environments and extreme slowness (5-minute bottleneck) to orchestrate and generate consistent test data for Lending credit tests before running CI/CD pipelines.",
+      "technicalSolution": "Replacement of blocking thread pools with native Java 25 Virtual Threads. Implementation of JEP 491 (replacing internal monitors with ReentrantLock to completely eliminate thread pinning) to trigger parallel asynchronous concurrent calls against 37 internal banking APIs. Customization of OpenTelemetry propagators to maintain Trace ID traceability across Virtual Threads in ECS Fargate.",
+      "impactMetrics": "Slashed data generation latency from 5 minutes to a surgical average of 7 seconds, maximizing CPU throughput and cutting infrastructure costs.",
+      "mermaidChart": "graph TD\n  A[CI/CD Pipeline] -->|Trigger| B(Data Generator - ECS Fargate)\n  B -->|Virtual Threads| C{37 Internal Banking APIs}\n  C -->|OpenTelemetry| D[Datadog Workflows]\n  C --> E[Lending Test Data]"
+    },
+    "reactive-banking-harness": {
+      "title": "Reactive Banking Test Harness & Chaos Engine | Open-Source",
+      "repoLink": "https://github.com/prado-x/reactive-banking-harness",
+      "stack": "Spring Boot 4.x, Java 25, Testcontainers, WireMock Docker Containers, Pact Framework (Consumer-Driven Contracts), GitHub Actions",
+      "description": "Open-source productivity framework focused on simulating high-resilience and concurrent banking scenarios within the CI pipeline.",
+      "technicalSolution": "Complete isolation of the testing environment using WireMock inside Testcontainers instances in GitHub Actions, eliminating network fluctuations. Implementation of contract testing using Pact Framework (Pact-JVM) to shield compatibility of downstream API signatures. Injection of Chaos Engineering (artificial latency and network packet drops via WireMock) to validate if the system's core Virtual Threads self-recover under extreme infrastructure stress.",
+      "mermaidChart": "graph TD\n  A[GitHub Actions CI] --> B(Testcontainers)\n  B --> C[WireMock Docker]\n  B --> D[Pact Framework JVM]\n  C -->|Chaos: Latency/Drops| E(Core System - Virtual Threads)\n  D -->|Contract Testing| E\n  E -->|Self Recovery| F[Resilient State]"
+    }
+  }
+}
