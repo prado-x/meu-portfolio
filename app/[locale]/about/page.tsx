@@ -1,4 +1,5 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import LighthouseMedia from "../../../components/LighthouseMedia";
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -11,8 +12,9 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
     : '';
 
   return (
-    <div className="flex flex-col w-full selection:bg-navy-800 selection:text-navy-100 min-h-screen pt-32 pb-24 relative z-10">
-      <main className="max-w-5xl mx-auto px-6 lg:px-12 w-full flex flex-col space-y-16 md:space-y-24">
+    <div className="relative min-h-screen w-full overflow-hidden selection:bg-navy-800 selection:text-navy-100 pt-32 pb-24 flex items-center justify-center">
+      <LighthouseMedia />
+      <main className="relative z-10 max-w-5xl mx-auto px-6 lg:px-12 w-full flex flex-col space-y-16 md:space-y-24">
         
         {/* Header Section: Photo and Title Side-by-Side */}
         <header className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-8 md:gap-12 pb-12 border-b border-navy-800/50">
